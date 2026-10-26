@@ -45,9 +45,12 @@ TF = re.compile(rb'/(\S+) ([\d.]+) Tf')
 reader = PdfReader(src)
 writer = PdfWriter(clone_from=reader)
 pieces = runs = 0
-for page in writer.pages:
-    fonts = {str(k)[1:]: widths(v) for k, v in page['/Resources'].get('/Font', {}).get_object().items()}
-    data = page.get_contents().get_data()
+def font_map(res):
+    f = res.get('/Font') if res else None
+    return {str(k)[1:]: widths(v) for k, v in f.get_object().items()} if f is not None else {}
+
+
+def rewrite(data, fonts):
     tfs = [(m.start(), m.group(1).decode(), float(m.group(2))) for m in TF.finditer(data)]
 
     def join(m):
@@ -76,10 +79,31 @@ for page in writer.pages:
             out += b'\n' + ('%.5f' % sum(dxs)).encode() + b' 0 Td'
         return out
 
-    new = RUN.sub(join, data)
-    from pypdf.generic import DecodedStreamObject
+    return RUN.sub(join, data)
+
+
+from pypdf.generic import DecodedStreamObject
+seen = set()
+for page in writer.pages:
+    res = page['/Resources']
+    fonts = font_map(res)
     so = DecodedStreamObject()
-    so.set_data(new)
+    so.set_data(rewrite(page.get_contents().get_data(), fonts))
     page[NameObject('/Contents')] = writer._add_object(so)
+    # text inside form XObjects (Chrome uses them for groups and clips)
+    stack = [res]
+    while stack:
+        r = stack.pop()
+        xo = r.get('/XObject')
+        for k, ref in (xo.get_object().items() if xo is not None else []):
+            x = ref.get_object()
+            if x.get('/Subtype') != '/Form' or id(x) in seen:
+                continue
+            seen.add(id(x))
+            xres = x.get('/Resources')
+            xfonts = dict(fonts, **font_map(xres.get_object() if xres else None))
+            x.set_data(rewrite(x.get_data(), xfonts))
+            if xres:
+                stack.append(xres.get_object())
 writer.write(dst)
 print(f'{pieces} glyph pieces joined into {runs} text runs')

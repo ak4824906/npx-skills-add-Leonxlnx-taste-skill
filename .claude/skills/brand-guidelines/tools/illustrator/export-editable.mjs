@@ -30,6 +30,33 @@ await page.emulateMedia({ media: 'print' });
 await page.goto(pathToFileURL(src).href, { waitUntil: 'networkidle' });
 await page.evaluate(() => document.fonts.ready);
 
+// Things Chrome draws as transparency groups or soft masks, which Illustrator outlines:
+// fold text opacity into the text colour, drop text-shadow, and turn ligatures off.
+const fixed = await page.evaluate(() => {
+  const n = { opacity: 0, shadow: 0 };
+  const st = document.createElement('style');
+  st.textContent = '*{font-variant-ligatures:none!important;text-shadow:none!important}';
+  document.head.appendChild(st);
+  const textOnly = (el) => [...el.querySelectorAll('*')].every((c) => getComputedStyle(c).display === 'inline' && !['IMG', 'SVG', 'CANVAS', 'VIDEO'].includes(c.tagName.toUpperCase()));
+  for (const el of document.querySelectorAll('body *')) {
+    const cs = getComputedStyle(el);
+    const op = parseFloat(cs.opacity);
+    if (op >= 1 || !el.textContent.trim() || !textOnly(el)) continue;
+    if (cs.backgroundImage !== 'none' || cs.boxShadow !== 'none') continue;
+    const fade = (c) => { const m = c.match(/[\d.]+/g).map(Number); return `rgba(${m[0]},${m[1]},${m[2]},${(m.length > 3 ? m[3] : 1) * op})`; };
+    // fold opacity into the box's own background and borders too
+    el.style.setProperty('background-color', fade(cs.backgroundColor), 'important');
+    for (const side of ['Top', 'Right', 'Bottom', 'Left']) el.style.setProperty(`border-${side.toLowerCase()}-color`, fade(cs[`border${side}Color`]), 'important');
+    const els = [el, ...el.querySelectorAll('*')];
+    const cols = els.map((e) => getComputedStyle(e).color);
+    els.forEach((e, i) => e.style.setProperty('color', fade(cols[i]), 'important'));
+    el.style.setProperty('opacity', '1', 'important');
+    n.opacity++;
+  }
+  return n;
+});
+console.log(`editability fixes: ${fixed.opacity} text opacities folded into colour; text-shadow and ligatures off`);
+
 const fontDir = path.join(outDir, 'fonts');
 const manPath = path.join(fontDir, 'fonts.json');
 if (fs.existsSync(manPath)) {
