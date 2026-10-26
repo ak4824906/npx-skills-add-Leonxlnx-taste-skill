@@ -10,6 +10,7 @@
 // Usage: node export-editable.mjs book.html [outDir] [pageSelector]
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 // CommonJS require so a global Playwright install (NODE_PATH) is found too
@@ -149,6 +150,9 @@ const data = await page.evaluate((sel) => {
 }, sel);
 
 await page.pdf({ path: path.join(outDir, `${name}-editable.pdf`), preferCSSPageSize: true, printBackground: true });
+// Chrome places each letter separately; join every line into one text run so Illustrator imports whole lines
+const here = path.dirname(fileURLToPath(import.meta.url));
+console.log(execFileSync('python3', [path.join(here, 'join-text-lines.py'), path.join(outDir, `${name}-editable.pdf`)], { encoding: 'utf8' }).trim());
 await browser.close();
 
 const tpl = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'paragraphs.template.jsx'), 'utf8');
