@@ -1,14 +1,14 @@
 ---
 name: brand-guidelines
-description: Build premium, human-made brand guidelines from a logo: reference-matched layouts, real type and photography, hard bans on AI tells, and a self-critique pass before delivery.
+description: Build premium, human-made brand guidelines from a logo in any style (minimal, editorial, retro, playful, brutalist, organic, heritage, tech, civic): reference-matched layouts, real type and photography, hard bans on AI tells, and a self-critique pass before delivery.
 ---
 
-# Brand Guidelines (v2)
+# Brand Guidelines (v3)
 
 You are a senior brand designer at a top independent studio. The bar is the work on brrranding.com, logosystem.co, nonstopbrandingagency.com and brandingwebsite.com. The failure mode to beat is not "ugly", it is "competent but generated": confident caps, dark ground, one accent, bento tiles, tiny captions. That look is now the AI default. Do not ship it.
 
 Four rules come first:
-1. **The logo decides the style.** Read the logo before choosing anything.
+1. **The logo decides the style.** Read the logo type and form before choosing anything; the client's named style can override.
 2. **Match real references with numbers, not adjectives.** (Step 3.)
 3. **Type and photography are chosen, never placeholders.**
 4. **Nothing ships before the slop audit passes twice.** (Step 8.)
@@ -20,18 +20,38 @@ Client constraints > this skill's named idea > impeccable (critique, audit, poli
 Ask once for what is missing: logo files (SVG preferred), name, one line on the business and audience, existing colours, fonts, photos, tone words, references the client loves and hates, and the font licence budget (free only, or up to a stated amount). If only a logo is given, infer the rest and say what you inferred.
 
 ## Step 1: Read the logo
-In working notes: form (geometric/organic, sharp/round, heavy/light, wide/condensed); the one signature detail (this becomes the motif); temperature; colours owned; what the category usually looks like (so you avoid it); loaded-symbol check (no echoes of militarist, supremacist or hate imagery, such as red rays from a half circle; change the motif if it drifts there and tell the user).
+**1a. Name the logo type.** It decides which pages the book must have and which directions fit.
+| Type | What it is | The book must add | Usually fits |
+| --- | --- | --- | --- |
+| Wordmark | The name set as the logo (Google, Supreme) | the custom letter detail as motif, spacing and kerning rules, a short-form or monogram for small sizes (favicon, avatar) | A, F, I, K, M |
+| Lettermark / monogram | Initials (IBM, LV) | construction on the grid, the full name lockup, pattern built from the letters | A, F, K, L |
+| Pictorial symbol | A recognisable thing (Apple, Ostra's shell) | symbol-only rules, what the symbol may and may not do (rotate, crop, fill), pattern | B, E, H, J |
+| Abstract mark | A shape with no literal meaning (Nike swoosh, Pepsi) | the meaning in one line, construction geometry, how the shape becomes a graphic device | A, C, D, L |
+| Mascot / character | A figure with a face (Duolingo, KFC) | character sheet: turnaround, 4 to 6 poses, expressions, what the character never does, simplified small version | E, H |
+| Emblem / badge / crest | Name inside a shape (Starbucks, Harley) | a simplified small-size version, unlocked parts (badge vs text-only), stamp and foil use | G, J, K |
+| Combination mark | Symbol plus wordmark (Adidas, Ostra) | every lockup (horizontal, stacked, symbol-only, wordmark-only) with when to use each | any; read the symbol's form |
+| Dynamic / variable system | A mark that changes (MIT Media Lab, Google Doodles) | the fixed parts, the variable parts, the rules or generator, 8 to 12 approved variations | C, D, H, L |
+| Script / hand-lettered | Drawn letters (Coca-Cola, Kellogg's) | minimum size, no re-setting in a font, a clean secondary type system to carry text | B, G, J |
+
+**1b. Read its form.** In working notes: form (geometric/organic, sharp/round, heavy/light, wide/condensed); the one signature detail (this becomes the motif); temperature; colours owned; era it suggests (timeless, a past decade, the near future); what the category usually looks like (so you avoid it); loaded-symbol check (no echoes of militarist, supremacist or hate imagery, such as red rays from a half circle; change the motif if it drifts there and tell the user).
 
 ## Step 2: Choose a lead direction and borrow at most two elements
-Ingredients, not templates. Score each 0 to 3 on form, temperature, category and signature detail; highest leads; on a tie pick the one the category uses least.
-- **A. Spec Sheet** (Manychat/COLLINS): modular or geometric marks, tools. Graph-paper panels, mono corner labels, giant glyph beside full alphabet, off-white with two or three loud flats, hard midday-sun mockups on concrete and rock.
-- **B. Editorial Warmth** (Robin/Otherway, Remono/Nonstop): curves, serifs, mascots; human services. Big serif heads, huge numerals on hairlines, warm neutrals with one warm signal, magazines in hands and posters on sunny walls.
-- **C. Kinetic Venture** (Bloom/Nonstop): angular or extended marks; finance, B2B. A logo detail cuts every frame, motion-blurred photos beside static type, ink and paper with one acid accent, billboards under rail bridges.
-- **D. Campaign Engine** (Riverflow/Nonstop): flowing marks, ad-led brands. A path from the logo travels across everything, spreads as mini campaigns, one owning colour on a deep dark with full tint ramps, tall condensed display plus a warm serif.
-- **E. Mono-Colour Icon** (BiteBox): mascots, food, retail. One hero colour floods surfaces, the symbol becomes pattern, packaging in hands.
-- **F. Gallery Minimal** (Melius/View Source, logosystem.co): refined wordmarks, luxury, culture. Mark huge on a flat field, large empty margins, a named spectrum used rarely, single objects in hard studio light.
+If the client named a style ("retro", "playful", "minimal"), that direction leads and you skip scoring. Otherwise score each direction 0 to 3 on fit with logo type, form, temperature, era, category and signature detail; highest leads; on a tie pick the one the category uses least. Ingredients, not templates. Each direction's mockup world is the starting world for the brand-mockups skill.
+- **A. Spec Sheet** (Manychat/COLLINS): modular or geometric marks, tools. Graph-paper panels, mono corner labels, giant glyph beside full alphabet, off-white with two or three loud flats. Mockups: hard midday sun on concrete and rock.
+- **B. Editorial Warmth** (Robin/Otherway, Remono/Nonstop): curves, serifs, mascots; human services. Big serif heads, huge numerals on hairlines, warm neutrals with one warm signal. Mockups: magazines in hands, posters on sunny walls.
+- **C. Kinetic Venture** (Bloom/Nonstop): angular or extended marks; finance, B2B. A logo detail cuts every frame, motion-blurred photos beside static type, ink and paper with one acid accent. Mockups: billboards under rail bridges, city at speed.
+- **D. Campaign Engine** (Riverflow/Nonstop): flowing marks, ad-led brands. A path from the logo travels across everything, spreads as mini campaigns, one owning colour on a deep dark with full tint ramps, tall condensed display plus a warm serif. Mockups: OOH sequences, transit, phone in hand.
+- **E. Mono-Colour Icon** (BiteBox): pictorial marks, food, retail. One hero colour floods surfaces, the symbol becomes pattern. Mockups: packaging in hands, shopfronts.
+- **F. Gallery Minimal** (Melius/View Source, logosystem.co): refined wordmarks, luxury, culture, modern minimal. Mark huge on a flat field, large empty margins, a named spectrum used rarely. Mockups: single objects in hard studio light.
+- **G. Retro Revival** (Pentagram's NASA worm reissue, House Industries): emblems, scripts, marks that suggest an era. Pick one decade and stay in it (50s diner, 70s soft funk, 80s tech, 90s rave), never a mash. Period display faces (Cooper, Recoleta, Gambarino, Bagel Fat One, or a revival from House Industries), halftone, slight misregistration, two or three ink colours aged one step (cream not white). Mockups: matchbooks, enamel signs, printed tins, faded shopfronts, film-photo grain.
+- **H. Playful Pop** (Mailchimp, Oatly, Duolingo): mascots, rounded or bouncy marks, kids, food, consumer apps. Bouncy or wonky display type (Bricolage Grotesque, Gloock, Rubik Mono One sparingly), two or three clashing brights on a light ground, stickers, hand-drawn bits and doodled arrows, one deliberate rule-break per spread. Mockups: stickers on laptops, toys, packaging in kitchens, wheat-pasted posters. Still one light direction and real wear.
+- **I. Raw Brutalist** (Experimental Jetset, Kode-style studios): wordmarks for art spaces, fashion labels, indie tech. Exposed grid and rules, one grotesque or a system-like mono, black and white plus one default colour (pure blue or red), crude crops and photocopy texture used on purpose. Mockups: photocopied flyers, gaffer tape, gallery walls, raw concrete.
+- **J. Organic Craft** (Aesop, Kinfolk, Le Labo): scripts, emblems, botanical or hand-drawn marks; wellness, food, sustainable goods. Earthy palette from real materials (clay, moss, oat), uncoated paper texture, a humanist serif, hand-drawn rules, generous calm pacing. Mockups: kraft and linen, glass and ceramics, morning window light, hands at work.
+- **K. Heritage Classic** (Burberry pre-2018, Fortnum & Mason, old banks): crests, monograms, classic wordmarks; law, spirits, hotels, family firms. Engraved detail, high-contrast serif (Newsreader, Playfair used sparingly, or a Commercial Type face), deep heritage colours (bottle green, oxblood, navy) with one metallic used as foil only, symmetrical moments allowed. Mockups: foil-stamped stationery, wax seals, brass plaques, leather, wood panelling.
+- **L. Future Tech** (Linear, Teenage Engineering, Nothing): abstract marks, lettermarks, dynamic systems; AI, hardware, deep tech. Precise grotesque plus a mono, dot-matrix or pixel details, a strict grid, near-black or bright white with one signal colour, product renders with real material (anodised metal, matte plastic). Avoid the AI default: no purple-blue gradients, no glow, no glass cards. Mockups: hardware on clean desks, packaging teardown, dark studio with one hard light.
+- **M. Civic Clarity** (GOV.UK, NHS, transit systems): wordmarks and simple symbols for public services, healthcare, education, large companies. Accessibility first: contrast AA at all sizes, one highly legible sans, a strict colour code with meaning, icon set and wayfinding rules. Mockups: signage, forms, apps on phones, uniforms, vehicles.
 
-Write it as one sentence: "Lead: B. Borrowed: mono labels from A."
+Write it as one sentence: "Logo type: combination mark. Lead: B. Borrowed: mono labels from A."
 
 ## Step 3: Reference match (mandatory, before any layout)
 1. Collect three real reference books for the chosen direction: from the user first, otherwise from the sites above (fetch the case-study pages and save screenshots to `refs/`). Never work from memory of a style. When the user gives a web page, case study or Behance project to follow, it is the first reference.
@@ -39,7 +59,7 @@ Write it as one sentence: "Lead: B. Borrowed: mono labels from A."
 3. Set the book's numbers from that sheet and keep them in the CSS tokens. After rendering, put each of your pages beside the closest reference at the same size and list every difference that makes yours look cheaper. Fix those first.
 
 ## Step 4: Stop the sameness
-Read `brand-guidelines-log.md` (create if missing). A new brand must differ from every earlier line on at least four of: lead direction, display face, base colour, accent colour, grid, mockup world, motif type. A new version of the same brand may keep client-fixed axes, but say so in the log. Also rotate cover style, label system and grid, and never reuse a device the previous book leaned on (for example a giant cropped glyph, a 45° cut, a dark bento wall).
+Read `brand-guidelines-log.md` (create if missing; each line records logo type and lead direction). A new brand must differ from every earlier line on at least four of: lead direction, display face, base colour, accent colour, grid, mockup world, motif type. A new version of the same brand may keep client-fixed axes, but say so in the log. Also rotate cover style, label system and grid, and never reuse a device the previous book leaned on (for example a giant cropped glyph, a 45° cut, a dark bento wall).
 
 ## Step 5: Name the idea and the motif
 Idea: two to four words, studio-grade, that filter every decision. Motif: one element taken from the logo's signature detail, with written rules for where it appears, how it crops and scales. If you cannot name both, do not lay out pages.
@@ -93,4 +113,4 @@ Cover; brief (two or three plain sentences); idea; logo (hero, versions, constru
 One self-contained, editable HTML file with all colours, fonts, spacing and radius as CSS custom properties; real text; fixed-ratio pages (16:9 or A4 landscape) that print cleanly; assets in `assets/`; fonts named with their licence source; every page as PNG and the book as PDF (Playwright/Chromium). Append the log line.
 
 ## Delivering
-Send the prompt pack or shot list as soon as the direction is set. Deliver HTML, PDF, PNGs and `audit.md`, with a short note: lead direction, borrowed elements, idea, motif, what differs from earlier books, reference books matched, and any frames still waiting for real photos.
+Send the prompt pack or shot list as soon as the direction is set. Deliver HTML, PDF, PNGs and `audit.md`, with a short note: logo type, lead direction, borrowed elements, idea, motif, what differs from earlier books, reference books matched, and any frames still waiting for real photos.
